@@ -1,10 +1,11 @@
-import * as React from 'react';
-import { ApolloProvider } from 'react-apollo';
-import { render } from 'react-dom';
-import { createGlobalStyle } from 'styled-components';
+import * as React from "react";
+import { ApolloProvider } from "react-apollo";
+import { render } from "react-dom";
+import { createGlobalStyle } from "styled-components";
+import "@babel/polyfill";
 
-import graphqlClient from './api/graphql';
-import Root from './components/Root';
+import graphqlClient from "./api/graphql";
+import Root from "./components/Root";
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Roboto:300,500&display=swap')
@@ -14,11 +15,10 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-
 render(
   <ApolloProvider client={graphqlClient}>
     <GlobalStyle />
     <Root />
   </ApolloProvider>,
-  document.getElementById('app')
+  document.getElementById("app")
 );

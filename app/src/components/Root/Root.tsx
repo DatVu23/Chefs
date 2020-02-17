@@ -1,7 +1,7 @@
-import * as React from 'react';
+import * as React from "react";
 import styled from "styled-components";
 
-import Chefs from './Chefs';
+import Chefs from "./Chefs";
 
 const Heading = styled.strong`
   display: block;
@@ -15,8 +15,12 @@ const Wrapper = styled.div`
 `;
 
 const Root = () => {
-  return <Wrapper><Heading>Root</Heading>
-    <Chefs /></Wrapper>
-}
+  return (
+    <Wrapper>
+      <Heading>Root</Heading>
+      <Chefs />
+    </Wrapper>
+  );
+};
 
 export default Root;

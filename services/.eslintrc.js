@@ -18,6 +18,8 @@ module.exports = {
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/array-type": "off",
-    "@typescript-eslint/no-object-literal-type-assertion": "off"
+    "@typescript-eslint/no-object-literal-type-assertion": "off",
+    "import/no-unresolved": "off",
+    "import/no-namespace": "off"
   }
 };
