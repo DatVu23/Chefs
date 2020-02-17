@@ -7,7 +7,8 @@
     "db:migrate": "sequelize db:migrate",
     "db:migrate:undo": "sequelize db:migrate:undo",
     "db:seed:all": "sequalize db:seed:all",
-    "watch": "ts-node-dev --respawn index.dev.ts"
+    "watch": "ts-node-dev --respawn index.dev.ts",
+    "lint": "yarn run eslint src/**/*.{ts,js}"
   },
   "devDependencies": {
     "@types/node": "^13.7.0",
@@ -16,6 +17,7 @@
     "eslint": "^6.8.0",
     "eslint-config-node": "^4.0.0",
     "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-prettier": "^3.1.2",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.7",
@@ -38,13 +40,13 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "lint-staged"
     }
   },
   "lint-staged": {
-    "./src/*{js, ts}": [
-      "yarn run prettier --write",
-      "yarn run eslint src/*.{js, ts} --fix-dry-run"
+    "src/**/*.ts": [
+      "yarn run eslint"
     ]
   },
   "_moduleAliases": {
